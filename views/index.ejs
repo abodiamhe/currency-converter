@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"
+/>
+  </head>
+  </html>
+ <body tabindex="-1" style="overflow: auto">
+    <div style="position: relative" class="fluid-container">
+      <section
+        style="pointer-events: none; padding-top: 0"
+        class="large-container"
+      >
+        <div class="col h1_title_block">
+          <div class="h1_subtitle_indexed">
+            <Span class="oa-overline">SMOOTH CURRENCY CONVERTER</Span>
+          </div>
+          <div class="h1_title_indexed">
+            <span>20</span> 
+          <span>CFA Franc BEAC</span> 
+            to
+            <span>Nigerian Naira</span> 
+          </div>
+        </div>
+        <div style="pointer-events: auto">
+          <div class="tab-box">
+            <form
+              action="/"
+              method="post"
+              tabindex="-1"
+              class="tab-box__ContentContainer"
+            >
+              <div>
+               
+                <div id="form" class="form">
+                  <label for="amount" class="label">Amount</label>
+                  <input
+                    name="amount" 
+                    type="number"
+                    class="text-input"
+                    autocomplete="off"
+                    value=""
+                  />
+
+                  <div></div>
+                  <label for="fromCurrency" class="label">From</label>
+                  <input
+                    list="countries"
+                    class="text-input"
+                    name="countries"
+                    placeholder="Type to search...."
+                  /> 
+                  <div></div>
+                  <label for="toCurrency" class="label">To</label>
+                  <input
+                    list="countries"
+                    class="text-input"
+                    name="countries"
+                    placeholder="Type to search...."
+                  /> 
+                  <div></div>
+                </div>
+                 <% if (locals.result) {%>
+                <div  class="result" > 
+                  <%= result %> 
+                </div>
+                <% }%>
+                 <% if (locals.error) {%>
+                <div  class="result" > 
+                  <%= error %> 
+                </div>
+                <% }%>
+                <div class="currency-converter__SubmitZone">
+                  <div class="tooltipContainer">
+                    <div class="icon-container">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 16 16"
+                        aria-hidden="true"
+                        style="
+                          color: rgb(92, 102, 123);
+                          width: 16px;
+                          height: 16px;
+                          margin-left: 4px;
+                        "
+                      >
+                        <path
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                          d="M8.571 11.429V6.286H6.286v1.143h1.143v4H5.714v1.142h4.572V11.43H8.57zM8 2.857a.857.857 0 100 1.714.857.857 0 000-1.714zM8 16A8 8 0 118 0a8 8 0 010 16zM8 1.143a6.857 6.857 0 100 13.714A6.857 6.857 0 008 1.143z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="text-container">
+                      SMOOTH's currency calculator tools use ExchangeRate-API,
+                      the touchstone FX rates compiled from leading market data
+                      contributors.
+                    </div>
+                  </div>
+                  <button id="button" class="button__BaseButton">
+                    Convert
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      document.getElementById("paragrah").classList.toggle("result");
+    </script>
+  </body>
+
+</html>
+
+
+<datalist id="countries">
+  <option value="AED"></option>
+  <option value="AFN"></option>
+  <option value="XCD"></option>
+  <option value="ALL"></option>
+  <option value="AMD"></option>
+  <option value="ANG"></option>
+  <option value="AOA"></option>
+  <option value="AQD"></option>
+  <option value="ARS"></option>
+  <option value="AUD"></option>
+  <option value="AZN"></option>
+  <option value="BAM"></option>
+  <option value="BBD"></option>
+  <option value="BDT"></option>
+  <option value="XOF"></option>
+  <option value="BGN"></option>
+  <option value="BHD"></option>
+  <option value="BIF"></option>
+  <option value="BMD"></option>
+  <option value="BND"></option>
+  <option value="BOB"></option>
+  <option value="BRL"></option>
+  <option value="BSD"></option>
+  <option value="NOK"></option>
+  <option value="BWP"></option>
+  <option value="BYR"></option>
+  <option value="BZD"></option>
+  <option value="CAD"></option>
+  <option value="CDF"></option>
+  <option value="XAF"></option>
+  <option value="CHF"></option>
+  <option value="CLP"></option>
+  <option value="CNY"></option>
+  <option value="COP"></option>
+  <option value="CRC"></option>
+  <option value="CUP"></option>
+  <option value="CVE"></option>
+  <option value="CYP"></option>
+  <option value="CZK"></option>
+  <option value="DJF"></option>
+  <option value="DKK"></option>
+  <option value="DOP"></option>
+  <option value="DZD"></option>
+  <option value="ECS"></option>
+  <option value="EEK"></option>
+  <option value="EGP"></option>
+  <option value="ETB"></option>
+  <option value="EUR"></option>
+  <option value="FJD"></option>
+  <option value="FKP"></option>
+  <option value="GBP"></option>
+  <option value="GEL"></option>
+  <option value="GGP"></option>
+  <option value="GHS"></option>
+  <option value="GIP"></option>
+  <option value="GMD"></option>
+  <option value="GNF"></option>
+  <option value="GTQ"></option>
+  <option value="GYD"></option>
+  <option value="HKD"></option>
+  <option value="HNL"></option>
+  <option value="HRK"></option>
+  <option value="HTG"></option>
+  <option value="HUF"></option>
+  <option value="IDR"></option>
+  <option value="ILS"></option>
+  <option value="INR"></option>
+  <option value="IQD"></option>
+  <option value="IRR"></option>
+  <option value="ISK"></option>
+  <option value="JMD"></option>
+  <option value="JOD"></option>
+  <option value="JPY"></option>
+  <option value="KES"></option>
+  <option value="KGS"></option>
+  <option value="KHR"></option>
+  <option value="KMF"></option>
+  <option value="KPW"></option>
+  <option value="KRW"></option>
+  <option value="KWD"></option>
+  <option value="KYD"></option>
+  <option value="KZT"></option>
+  <option value="LAK"></option>
+  <option value="LBP"></option>
+  <option value="LKR"></option>
+  <option value="LRD"></option>
+  <option value="LSL"></option>
+  <option value="LTL"></option>
+  <option value="LVL"></option>
+  <option value="LYD"></option>
+  <option value="MAD"></option>
+  <option value="MDL"></option>
+  <option value="MGA"></option>
+  <option value="MKD"></option>
+  <option value="MMK"></option>
+  <option value="MNT"></option>
+  <option value="MOP"></option>
+  <option value="MRO"></option>
+  <option value="MTL"></option>
+  <option value="MUR"></option>
+  <option value="MVR"></option>
+  <option value="MWK"></option>
+  <option value="MXN"></option>
+  <option value="MYR"></option>
+  <option value="MZN"></option>
+  <option value="NAD"></option>
+  <option value="XPF"></option>
+  <option value="NGN"></option>
+  <option value="NIO"></option>
+  <option value="NPR"></option>
+  <option value="NZD"></option>
+  <option value="OMR"></option>
+  <option value="PAB"></option>
+  <option value="PEN"></option>
+  <option value="PGK"></option>
+  <option value="PHP"></option>
+  <option value="PKR"></option>
+  <option value="PLN"></option>
+  <option value="PYG"></option>
+  <option value="QAR"></option>
+  <option value="RON"></option>
+  <option value="RSD"></option>
+  <option value="RUB"></option>
+  <option value="RWF"></option>
+  <option value="SAR"></option>
+  <option value="SBD"></option>
+  <option value="SCR"></option>
+  <option value="SDG"></option>
+  <option value="SEK"></option>
+  <option value="SGD"></option>
+  <option value="SKK"></option>
+  <option value="SLL"></option>
+  <option value="SOS"></option>
+  <option value="SRD"></option>
+  <option value="STD"></option>
+  <option value="SVC"></option>
+  <option value="SYP"></option>
+  <option value="SZL"></option>
+  <option value="THB"></option>
+  <option value="TJS"></option>
+  <option value="TMT"></option>
+  <option value="TND"></option>
+  <option value="TOP"></option>
+ <option value="TRY"></option>
+  <option value="TTD"></option>
+  <option value="TWD"></option>
+  <option value="TZS"></option>
+  <option value="UAH"></option>
+  <option value="UGX"></option>
+  <option value="USD"></option>
+  <option value="UYU"></option>
+  <option value="UZS"></option>
+  <option value="VEF"></option>
+  <option value="VND"></option>
+  <option value="VUV"></option>
+  <option value="YER"></option>
+  <option value="ZAR"></option>
+  <option value="ZMK"></option>
+  <option value="ZWD"></option>
+</datalist>
+
+
+
+
+
