@@ -2,7 +2,6 @@ import "dotenv/config";
 import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
-// import "node_modules/flag-icons/css/flag-icons.min.css";
 
 const API_URL = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/EUR/GBP/1`;
 
