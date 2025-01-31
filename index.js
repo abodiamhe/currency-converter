@@ -5,8 +5,7 @@ import axios from "axios";
 
 const API_URL = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/EUR/GBP/1`;
 
-const app = express();
-const port = 3000;
+const app = express(); 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -32,7 +31,7 @@ app.post("/", async (req, res) => {
   }
 });
 
-app.listen(port, (req, res) => {
+app.listen(process.env.PORT || 3000, (req, res) => {
   console.log(`Server listening on port ${port}.`);
 });
 
